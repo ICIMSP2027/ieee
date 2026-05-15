@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Schedule - ICIMSP 2027</title>
+<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<style>
+  /* Schedule page specific styles */
+  .coming-soon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #f5f7fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    margin: 2rem 0;
+  }
+  
+  .coming-soon-icon {
+    font-size: 5rem;
+    color: #003366;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  .coming-soon-title {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .coming-soon-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .schedule-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin: 3rem 0;
+  }
+  
+  .info-card-schedule {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+  }
+  
+  .info-card-schedule:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+  
+  .info-card-schedule i {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+  
+  .info-card-schedule h3 {
+    color: #003366;
+    margin-bottom: 0.75rem;
+  }
+  
+  .info-card-schedule p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .notification-box {
+    background: #e8f0fe;
+    border-left: 4px solid #ff8c42;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .notification-box i {
+    font-size: 1.8rem;
+    color: #003366;
+  }
+  
+  .notification-box p {
+    flex: 1;
+    margin: 0;
+    color: #333;
+  }
+  
+  .notification-box .btn-small {
+    background: #003366;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+  
+  .notification-box .btn-small:hover {
+    background: #004a99;
+  }
+  
+  .overview-timeline {
+    margin: 2rem 0;
+  }
+  
+  .timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  
+  .timeline-date {
+    min-width: 120px;
+    font-weight: 700;
+    color: #003366;
+  }
+  
+  .timeline-content h4 {
+    color: #003366;
+    margin-bottom: 0.5rem;
+  }
+  
+  .timeline-content p {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 700px) {
+    .timeline-item {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .timeline-date {
+      min-width: auto;
+    }
+    .coming-soon-title {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="logo-left">
+      <a href="index.html" aria-label="OUTR home">
+        <img src="images/outr-logo.png" alt="OUTR Logo" class="logo-large" />
+      </a>
+    </div>
+    <div class="header-center">
+      <p>International Conference on Intelligent Machine & Signal Processing (ICIMSP 2027)</p>
+      <p>1–3 July 2027, Bhubaneswar, Odisha - Hybrid</p>
+    </div>
+    <div class="logo-right">
+      <a href="index.html" aria-label="ICIMSP 2027 home">
+        <img src="images/ICIMSP.png" alt="ICIMSP 2027 Logo" class="logo-large" />
+      </a>
+    </div>
+  </div>
+  <nav aria-label="Main navigation">
+    <ul class="main-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="call-for-papers.html">Call for Papers</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="schedule.html" class="active">Schedule</a></li>
+      <li><a href="committee.html">Committee</a></li>
+      <li><a href="sponsorship.html">Sponsorship</a></li>
+      <li><a href="social-events.html" class="active">Social Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <!-- Page Header -->
+    <section style="text-align: center; margin: 2rem 0 1rem;">
+      <h1 style="color: #003366;">Conference Schedule</h1>
+      <p style="font-size: 1.1rem; color: #666;">1–3 July 2027 | Hybrid Mode (In-person & Virtual)</p>
+    </section>
+
+    <!-- Coming Soon Message -->
+    <div class="coming-soon-container">
+      <div class="coming-soon-icon">
+        <b class="fas fa-calendar-alt"></b>
+      </div>
+      <h2 class="coming-soon-title">Schedule Coming Soon!</h2>
+      <p class="coming-soon-subtitle">We're currently finalizing an exciting lineup of sessions, keynotes, and workshops.</p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <a href="#notify" class="btn" onclick="alert('Notification feature coming soon. Please check back later!')">
+          <i class="fas fa-bell"></i> Notify Me
+        </a>
+        <a href="contact.html" class="btn secondary">
+          <i class="fas fa-envelope"></i> Contact Us
+        </a>
+      </div>
+    </div>
+
+    <!-- Conference Overview Section -->
+    <section class="overview-timeline">
+      <h2 style="color: #003366; margin-bottom: 1.5rem;">Conference at a Glance</h2>
+      <div class="timeline-item">
+        <div class="timeline-date">
+          <i class="fas fa-calendar-day"></i> Day 1<br>
+          <strong>1 July 2027</strong>
+        </div>
+        <div class="timeline-content">
+          <h4>Inauguration & Keynotes</h4>
+          <p>Opening ceremony, keynote speeches by distinguished experts, and welcome reception. Technical sessions on intelligent machines and autonomous systems.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">
+          <i class="fas fa-calendar-day"></i> Day 2<br>
+          <strong>2 July 2027</strong>
+        </div>
+        <div class="timeline-content">
+          <h4>Technical Sessions & Workshops</h4>
+          <p>Parallel oral sessions, panel discussions, and hands-on workshops on computer vision, signal processing, and emerging technologies.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">
+          <i class="fas fa-calendar-day"></i> Day 3<br>
+          <strong>3 July 2027</strong>
+        </div>
+        <div class="timeline-content">
+          <h4>Poster Presentations & Valedictory</h4>
+          <p>Student paper contest, poster sessions, industry demos, and closing ceremony with award distributions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What to Expect -->
+    <h3 style="color: #003366; margin: 2rem 0 1rem;">What to Expect</h3>
+    <div class="schedule-info-grid">
+      <div class="info-card-schedule">
+        <i class="fas fa-microphone-alt"></i>
+        <h3>Keynote Talks</h3>
+        <p>World-renowned speakers sharing insights on cutting-edge research and future directions.</p>
+      </div>
+      <div class="info-card-schedule">
+        <i class="fas fa-chalkboard-teacher"></i>
+        <h3>Technical Sessions</h3>
+        <p>Peer-reviewed paper presentations across 8 conference tracks.</p>
+      </div>
+      <div class="info-card-schedule">
+        <i class="fas fa-chalkboard"></i>
+        <h3>Workshops & Tutorials</h3>
+        <p>Hands-on workshops on AI Imaging, Edge Computing, and more.</p>
+      </div>
+      <div class="info-card-schedule">
+        <i class="fas fa-network-wired"></i>
+        <h3>Networking</h3>
+        <p>Opportunities to connect with researchers and industry professionals.</p>
+      </div>
+    </div>
+
+    <!-- Important Notes -->
+    <div class="notification-box">
+      <i class="fas fa-info-circle"></i>
+      <p><strong>Important Note:</strong> The detailed schedule including session timings, speaker lineup, and room assignments will be announced by <strong>April 2027</strong>. All registered participants will receive email notifications.</p>
+      <a href="contact.html" class="btn-small">Stay Updated</a>
+    </div>   
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2027 ICIMSP Organizing Committee, Odisha University of Technology and Research, Bhubaneswar</p>
+  <p style="font-size: 0.85rem; margin-top: 6px;">
+    <i class="fas fa-envelope"></i> icimsp2027@outr.ac.in | Hybrid Conference 1–3 July 2027
+  </p>
+</footer>
+
+<style>
+  .btn-outline {
+    background: transparent;
+    color: #003366;
+    border: 2px solid #003366;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover {
+    background: #003366;
+    color: #fff;
+  }
+</style>
+</body>
+</html>
